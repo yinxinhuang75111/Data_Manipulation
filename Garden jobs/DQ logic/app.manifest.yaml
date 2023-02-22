@@ -1,0 +1,16 @@
+slug: etl-for-webbank-filetransfer
+title: ETL for Webbank File Tranfer
+authors: Shouvik Sharma (shouvik.sharma@avant.com)
+description: This mechanism will be helpful in moving the files from sftp to our landing zone.
+entry: app.py
+node: large
+language: python3
+# schedule: 0,15,30,45 18-23 * * * America/Chicago
+outputs:
+  - key: ACH_File
+    type: file
+    description: File containing sales details
+
+resources:
+  - webbank.aws
+  - web_bank_pos_sftp
